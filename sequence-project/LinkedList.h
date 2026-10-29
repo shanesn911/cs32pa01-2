@@ -16,7 +16,7 @@
 #include <stdexcept>
 
 template <typename T>
-class LinkedList {
+class LinkedList : public Sequence<T> {
 public:
     LinkedList();                              // empty list
     LinkedList(std::initializer_list<T> il);   // LinkedList<int> l{1, 2, 3};
@@ -24,9 +24,9 @@ public:
     LinkedList& operator=(const LinkedList& other);
     ~LinkedList();
 
-    std::size_t size() const;
-    T& at(std::size_t i);                      // throws std::out_of_range if i >= size()
-    const T& at(std::size_t i) const;
+    std::size_t size() const override;
+    T& at(std::size_t i) override;                      // throws std::out_of_range if i >= size()
+    const T& at(std::size_t i) const override;
     void insert(std::size_t index, const T& value); // throws std::out_of_range if index > size()
     void erase(std::size_t index);             // throws std::out_of_range if index >= size()
 
