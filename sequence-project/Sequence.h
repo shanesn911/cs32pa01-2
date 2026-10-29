@@ -38,6 +38,8 @@
 template <typename T>
 class Sequence {
 public:
+    virtual ~Sequence() = default;
+
     // ---- The five primitives ----
     virtual std::size_t size() const = 0;
     virtual T& at(std::size_t i) = 0;
@@ -46,7 +48,7 @@ public:
     virtual void erase(std::size_t index) = 0;
 
     // ---- Shared operations ----
-    virtual bool empty() const;
+    bool empty() const;
     T& front();
     T& back();
     virtual void push_back(const T& value);
@@ -55,7 +57,6 @@ public:
     virtual int indexOf(const T& value) const;
     void print(std::ostream& os) const;
 
-    virtual ~Sequence() = default;
 
 };
 
