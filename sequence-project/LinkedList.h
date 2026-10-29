@@ -30,17 +30,7 @@ public:
     void insert(std::size_t index, const T& value); // throws std::out_of_range if index > size()
     void erase(std::size_t index);             // throws std::out_of_range if index >= size()
 
-    bool empty() const;
-    T& front();                                // throws std::out_of_range if empty
-    T& back();                                 // throws std::out_of_range if empty
-    void push_back(const T& value);
-    void pop_back();                           // throws std::out_of_range if empty
-    bool contains(const T& value) const;
-    int indexOf(const T& value) const;         // -1 if not found
-    void print(std::ostream& os) const;        // prints [1, 2, 3]
-    bool operator==(const LinkedList& other) const;   // same size and same elements
-    bool operator!=(const LinkedList& other) const;
-
+   
 private:
     struct Node {
         T value;
