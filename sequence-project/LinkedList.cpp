@@ -126,3 +126,4 @@ void LinkedList<T>::erase(std::size_t index) {
 
 // ---- Everything else ----
 
+#endif

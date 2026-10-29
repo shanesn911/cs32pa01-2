@@ -27,8 +27,8 @@ public:
     std::size_t size() const override;
     T& at(std::size_t i) override;                      // throws std::out_of_range if i >= size()
     const T& at(std::size_t i) const override;
-    void insert(std::size_t index, const T& value); // throws std::out_of_range if index > size()
-    void erase(std::size_t index);             // throws std::out_of_range if index >= size()
+    void insert(std::size_t index, const T& value) override; // throws std::out_of_range if index > size()
+    void erase(std::size_t index) override;             // throws std::out_of_range if index >= size()
 
    
 private:
