@@ -32,7 +32,7 @@ GrowthStats measure_growth(double factor, std::size_t n) {
 
         if (!(v.capacity() == old_cap)) {
             ++stats.reallocations;
-            stats.elements_copied += old_size:
+            stats.elements_copied += old_size;
         }
     }
 
