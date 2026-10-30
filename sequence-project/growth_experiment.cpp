@@ -22,7 +22,7 @@ GrowthStats measure_growth(double factor, std::size_t n) {
     double old_factor = Vector<int>::growth_factor;
     Vector<int>::growth_factor = factor;
     GrowthStats stats;
-    vector<int> v;
+    Vector<int> v;
     
     for (std:size_t i = 0; i < n; ++i) {
         std::size_t old_size = v.size();
