@@ -192,6 +192,13 @@ const T& Vector<T>::operator[](std::size_t i) const {
     return begin_[i];
 }
 
+template <typename T>
+T& Vector<T>::at(std::size_t i) {
+    if (i >= size())
+        throw std::out_of_range("Index out of range");
+    return begin_[i];
+}
+
 // Returns a reference to element i.
 // Throws std::out_of_range if i >= size().
 template <typename T>
