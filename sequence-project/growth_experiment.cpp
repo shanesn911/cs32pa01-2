@@ -24,7 +24,7 @@ GrowthStats measure_growth(double factor, std::size_t n) {
     GrowthStats stats;
     Vector<int> v;
     
-    for (std:size_t i = 0; i < n; ++i) {
+    for (std::size_t i = 0; i < n; ++i) {
         std::size_t old_size = v.size();
         std::size_t old_cap = v.capacity();
 
