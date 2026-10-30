@@ -19,5 +19,24 @@
 // alone.
 GrowthStats measure_growth(double factor, std::size_t n) {
     // TODO
-    throw std::logic_error("measure_growth() not implemented");
+    double old_factor = Vector<int>::growth_factor;
+    Vector<int>::growth_factor = factor;
+    GrowthStats stats;
+    vector<int> v;
+    
+    for (std:size_t i = 0; i < n; ++i) {
+        std::size_t old_size = v.size();
+        std::size_t old_cap = v.capacity();
+
+        v.push_back(static_cast<int>(i));
+
+        if (!(v.capacity() == old_cap)) {
+            ++stats.reallocations;
+            stats.elements_copied += old_size:
+        }
+    }
+
+    stats.final_capacity = v.capacity();
+    Vector<int>::growth_factor = old_factor;
+    return stats;
 }
